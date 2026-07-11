@@ -1,3 +1,31 @@
 body{
     background-color: lightgrey;
 }
+.navbar{
+   
+   background-color: black;
+   border-radius: 90px;
+   margin: 10px;
+}
+.container{
+    margin-left:1rem !important;
+}
+
+
+.short {
+    display: inline;
+}
+
+.full {
+    display: inline-flex;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 1s ease;
+    /* vertical-align: bottom; */
+}
+    
+
+.navbar-brand:hover .full {
+    max-width: 200px;
+}

@@ -6,7 +6,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/new",(req ,res)=>{
-    res.send("Create blog post")
-})
+    res.render("new")
+});
+
+router.post("/", (req, res) => {
+    console.log(req.body);
+    res.send("Blog Received");
+});
 
 module.exports = router;
