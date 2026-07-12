@@ -1,6 +1,18 @@
 body{
     background-color: lightgrey;
 }
+.logo{
+    width: 45px;
+    height:45px;
+     object-fit: contain;
+    display: block;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .navbar{
    
    background-color: black;
@@ -9,23 +21,69 @@ body{
 }
 .container{
     margin-left:1rem !important;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 
-.short {
-    display: inline;
+.button_nav{
+
+   
+    background-color: white;
+    border-radius: 50px;
+    border:none;
+    transition: transform 0.3s ease;
+    font-weight: bold;
 }
 
-.full {
-    display: inline-flex;
-    max-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: max-width 1s ease;
-    /* vertical-align: bottom; */
-}
+.button_nav:hover{
+     transform: scale(1.1);
     
+}
 
-.navbar-brand:hover .full {
-    max-width: 200px;
+
+/* #newejs ka css */
+
+
+.container_new{
+    display: flex;
+    justify-content: center;  /* Horizontal center */
+    align-items: center;      /* Vertical center */
+    min-height: 80vh;
+
+}
+
+.card{
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.644); /* 20% white */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 70%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.input_new::placeholder{
+    text-align: center;
+}
+
+.textarea_new{
+    width: 90%;
+    height: 400px;
+}
+.button_new{
+   background-color:black;
+   color:whitesmoke;
+   border-radius: 50px;
+   border:none;
+   transition: transform 0.3s ease;
+}
+
+.button_new:hover{
+     transform: scale(1.1);
+    
 }

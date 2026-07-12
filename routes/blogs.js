@@ -11,7 +11,7 @@ router.get("/new",(req ,res)=>{
 
 router.post("/", (req, res) => {
     console.log(req.body);
-    res.send("Blog Received");
+    res.render("index");
 });
 
 module.exports = router;
