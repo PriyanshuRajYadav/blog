@@ -5,6 +5,7 @@ const blogRoutes = require("./routes/blogs");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
+const methodOverride = require("method-override");
 
 const app= express();
 app.engine("ejs" , engine);
@@ -14,6 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const port=8080;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 app.use("/blogs", blogRoutes);
 const dbUrl = process.env.ATLASDB_URL;

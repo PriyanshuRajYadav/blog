@@ -1,2 +1,23 @@
 <% layout("layouts/boilerplate") %>
 
+<h1>All Blogs</h1>
+
+<a href="/blogs/new">
+    <button>Create New Blog</button>
+</a>
+
+<hr>
+
+<% for (let blog of allBlogs) { %>
+
+    <h3><%= blog.title %></h3>
+
+    <p><%= blog.content %></p>
+
+    <hr>
+
+    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+
+<% } %>
