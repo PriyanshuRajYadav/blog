@@ -10,6 +10,7 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User");
+const userRoutes = require("./routes/users");
 
 const app= express();
 app.engine("ejs" , engine);
@@ -36,7 +37,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+app.use("/", userRoutes);
 app.use("/blogs", blogRoutes);
+
 const dbUrl = process.env.ATLASDB_URL;
 
 main()
