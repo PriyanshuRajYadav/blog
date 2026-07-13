@@ -1,23 +1,38 @@
 <% layout("layouts/boilerplate") %>
 
-<h1>All Blogs</h1>
 
-<a href="/blogs/new">
-    <button>Create New Blog</button>
-</a>
+    <div class="container_card">
 
-<hr>
+        <div class="card">
+            <br><br>
 
-<% for (let blog of allBlogs) { %>
+            <% for (let blog of allBlogs) { %>
 
-    <h3><%= blog.title %></h3>
+                <div class="inner_card">
+                    <a class="tittle" href="/blogs/<%= blog._id %>">
+                        <h3>
+                            <%= blog.title %>
+                        </h3>
+                    </a>
+                    <br>
+                    <p class="name"><%=blog.author%></p>
+                    
 
-    <p><%= blog.content %></p>
+                    <p class="blog_content"><%= blog.content %></p>
+                    
+                     
 
-    <hr>
 
-    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-    <button>Delete</button>
-</form>
 
-<% } %>
+
+
+                    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                        <button class="button">Delete</button>
+                    </form>
+                    <hr>
+                </div>
+
+                <% } %>
+
+        </div>
+    </div>

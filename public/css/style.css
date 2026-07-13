@@ -1,31 +1,38 @@
-body{
-    background-color: lightgrey;
+body {
+    background-color: #fafafa
 }
-.logo{
+
+.logo {
     width: 45px;
-    height:45px;
+    height: 45px;
     object-fit: contain;
     display: block;
 
 }
 
-.navbar-brand{
+.navbar-brand {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-.navbar{
    
-   background-color: black;
-   border-radius: 90px;
-   margin: 10px;
 }
-.logo-name{
+
+.navbar {
+    position: sticky;
+    z-index: 1000;
+    top: 5px;
+    background-color: black;
+    border-radius: 90px;
+    margin: 10px;
+}
+
+.logo-name {
     margin-left: -20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.container{
-    margin-left:1rem !important;
+
+.container {
+    margin-left: 1rem !important;
 
     display: flex;
     justify-content: space-between;
@@ -34,61 +41,124 @@ body{
 }
 
 
-/* .button_nav{
+.button_nav {
 
-   
+
     background-color: white;
     border-radius: 50px;
-    border:none;
+    border: none;
     transition: transform 0.3s ease;
     font-weight: bold;
 }
 
-.button_nav:hover{
-     transform: scale(1.1);
-    
-} */
+.button_nav:hover {
+    transform: scale(1.1);
+
+}
 
 
-/* #newejs ka css */
 
 
-.container_new{
+.container_card {
     display: flex;
-    justify-content: center;  /* Horizontal center */
-    align-items: center;      /* Vertical center */
+    flex-direction: column;
+    justify-content: center;
+    /* Horizontal center */
+    align-items: center;
+    /* Vertical center */
     min-height: 80vh;
 
 }
 
-.card{
+.card {
     text-align: center;
-
-    background: rgba(255, 255, 255, 0.644); /* 20% white */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* align-items: center; */
+    background: rgba(255, 255, 255, 0.644);
+    /* 20% white */
+    border:1px solid #ccc;
     width: 70%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
+.inner_card{
+     text-align: center;
+margin-top: -50px;
+margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.644);
+    /* 20% white */
+    /* border: 100px solid rgba(255, 255, 255, 0.3); */
+    width: 100%;
+    padding: 20px;
+    border: 5px solid black;
+    border-radius: 10px;
 
-.input_new::placeholder{
+}
+.input{
+    width: 50%;
+}
+
+
+.input::placeholder {
     text-align: center;
 }
 
-.textarea_new{
-    width: 90%;
+.textarea {
+    width: 70%;
     height: 400px;
 }
-.button_new{
-   background-color:black;
-   color:whitesmoke;
-   border-radius: 50px;
-   border:none;
-   transition: transform 0.3s ease;
+
+.button {
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 50px;
+    border: none;
+    transition: transform 0.3s ease;
 }
 
-.button_new:hover{
-     transform: scale(1.1);
+.button:hover {
+    transform: scale(1.1);
+
+}
+
+.tittle {
+
+    text-align: left;
     
+    text-decoration: none;
+    color: black;
+}
+
+.tittle h3 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 900;
+    margin-bottom:0px;
+    margin-left: 50px;
+    font-size:300%;
+}
+
+.blog_content {
+    font-family: "Inter", sans-serif;
+    width: 80%;
+    white-space: pre-wrap;
+    text-align: left;
+    margin-left: 50px;
+    font-size: larger;
+    
+}
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+
+    .title,
+    .blog_content {
+        margin: 0 1rem;
+    }
+}
+.name{
+    text-align: left;
+    margin-left: 50px;
+    text-decoration: underline;
+    font-style: italic;
 }

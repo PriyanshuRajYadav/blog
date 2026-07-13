@@ -8,7 +8,33 @@ router.get("/", async(req, res) => {
 });
 
 router.get("/new",(req ,res)=>{
-    res.render("new")
+    res.render("name")
+});
+
+
+router.get("/new/create", (req, res) => {
+    res.render("new", {
+        author: req.query.author
+        
+    });
+});
+
+
+
+router.get("/:id", async (req, res) => {
+    const id = req.params.id;
+
+    const blog = await Blog.findById(id);
+
+    res.render("show", { blog });
+});
+
+router.get("/:id/edit", async (req, res) => {
+    const id = req.params.id;
+
+    const blog = await Blog.findById(id);
+
+    res.render("edit", { blog });
 });
 
 router.post("/", async(req, res) => {
@@ -16,6 +42,14 @@ router.post("/", async(req, res) => {
      await newBlog.save();
 
     res.redirect("/blogs");
+});
+
+router.put("/:id", async (req, res) => {
+    const { id } = req.params;
+
+    await Blog.findByIdAndUpdate(id, req.body);
+
+    res.redirect(`/blogs/${id}`);
 });
 
 router.delete("/:id", async (req, res) => {

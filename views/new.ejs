@@ -1,14 +1,17 @@
 <% layout("layouts/boilerplate") %>
 
 
-<div class="container_new">
+<div class="container_card">
 <div class="card">  
    
 <form class="form" action="/blogs" method="POST">
+
      <h1>Create New Blog</h1>
 
+     <input type="hidden" name="author" value="<%= author %>">
 
-    <input class="input_new"
+
+    <input class="input"
         type="text"
         name="title"
         placeholder="Enter Blog Title"
@@ -16,14 +19,14 @@
 
     <br><br>
 
-    <textarea class="textarea_new"
+    <textarea class="textarea"
         name="content"
         placeholder="Write your blog here..."
     ></textarea>
 
     <br><br>
 
-    <button class="button_new">Create Blog</button>
+    <button class="button">Create Blog</button>
 
 </form>
 </div>

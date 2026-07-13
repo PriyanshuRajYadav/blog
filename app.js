@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 const methodOverride = require("method-override");
+const session = require("express-session");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/User");
 
 const app= express();
 app.engine("ejs" , engine);
@@ -16,6 +20,21 @@ const port=8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+
+const sessionOptions = {
+    secret: "mysecretcode",
+    resave: false,
+    saveUninitialized: false,
+};
+
+app.use(session(sessionOptions));
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use("/blogs", blogRoutes);
 const dbUrl = process.env.ATLASDB_URL;
