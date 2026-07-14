@@ -190,6 +190,21 @@ margin-bottom: 60px;
 
     }
 
+    .icon_div{
+        gap: 8px;
+        margin-right: 0;
+    }
+
+    .button_nav{
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .account{
+        width: 24px;
+        height: 24px;
+    }
+
     .tittle h3{
        margin: 0 1rem;
        font-size: 25px;
@@ -206,4 +221,29 @@ margin-bottom: 60px;
         font-size: 15px;
         
     }
+    .navbar {
+        margin: 5px;
+        border-radius: 35px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-name {
+        font-size: 16px;
+    }
+
+    
+   
 }
+  
