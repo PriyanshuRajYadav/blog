@@ -1,3 +1,5 @@
+<%= currUser ? currUser.username : "Guest" %>
+
 <% layout("layouts/boilerplate") %>
 
 
@@ -15,7 +17,7 @@
                         </h3>
                     </a>
                     <br>
-                    <p class="name"><%=blog.author%></p>
+                    <p class="name">By <%= blog.author.username %></p>
                     
 
                     <p class="blog_content"><%= blog.content %></p>
@@ -25,11 +27,14 @@
 
 
 
-
+<% if (currUser && blog.author.equals(currUser._id)) { %>
                     <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
                         <button class="button">Delete</button>
                     </form>
                     <hr>
+                
+
+                <% } %>
                 </div>
 
                 <% } %>

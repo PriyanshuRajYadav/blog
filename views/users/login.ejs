@@ -1,35 +1,35 @@
- <% layout("layouts/landingnav") %>
+  <% layout("layouts/landingnav") %>
 
- <div class="container_card">
+<div class="container_card">
 <div class="card">  
-<h1>Register</h1>
+<h1>Login</h1>
 
-<form action="/register" method="POST">
+<form class="form"action="/login" method="POST">
 
-    <div>
+  
         <label>Username</label>
-        <input
+        <input class="input"
             type="text"
             name="username"
             required
         >
-    </div>
+   
 
-    <br>
+    <br><br>
 
-    <div>
+    
         <label>Password</label>
         <input
             type="password"
             name="password"
             required
         >
-    </div>
+    
 
-    <br>
+    <br><br>
 
-    <button class="button_blog">Register</button>
+    <button class="button_blog">Login</button>
+</div>
+</div>
 
 </form>
-</div>
-</div>

@@ -2,6 +2,7 @@ const express= require("express");
 const path = require("path");
 const engine= require("ejs-mate")
 const blogRoutes = require("./routes/blogs");
+const landingRoutes=require("./routes/landing.js")
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -32,6 +33,11 @@ app.use(session(sessionOptions));
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+    res.locals.currUser = req.user;
+    next();
+});
+
 passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
@@ -40,6 +46,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use("/", userRoutes);
 app.use("/blogs", blogRoutes);
+app.use("/", landingRoutes)
 
 const dbUrl = process.env.ATLASDB_URL;
 

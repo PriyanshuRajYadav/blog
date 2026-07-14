@@ -8,10 +8,11 @@
 <hr>
 
 <p class="blog_content"><%= blog.content %></p>
-
+<% if (currUser && blog.author.equals(currUser._id)) { %>
 <a href="/blogs/<%= blog._id %>/edit">
     <button class="button">Edit Blog</button>
 </a>
+<% } %>
 
 <a href="/blogs">Back to All Blogs</a>
 

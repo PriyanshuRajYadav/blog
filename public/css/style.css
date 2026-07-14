@@ -9,6 +9,30 @@ body {
     display: block;
 
 }
+.account {
+    width: 32px;
+    height: 32px;
+    color: white;      /* Icon color */
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+.account:hover {
+    transform: scale(1.1);
+
+}
+
+.icon_div{
+    display: flex;
+    gap:100px;
+    margin-right: -100px;
+}
+
+
+
 
 .navbar-brand {
     display: flex;
@@ -43,7 +67,8 @@ body {
 
 .button_nav {
 
-
+    display: inline-block;
+    vertical-align: middle;
     background-color: white;
     border-radius: 50px;
     border: none;
@@ -146,19 +171,39 @@ margin-bottom: 60px;
     font-size: larger;
     
 }
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-    }
 
-    .title,
-    .blog_content {
-        margin: 0 1rem;
-    }
-}
 .name{
     text-align: left;
     margin-left: 50px;
     text-decoration: underline;
     font-style: italic;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+       
+    
+
+    }
+
+    .tittle h3{
+       margin: 0 1rem;
+       font-size: 25px;
+    }
+    .name{
+        margin-left: 1rem;
+    }
+    
+    .blog_content {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        font-size: 15px;
+        
+    }
 }
